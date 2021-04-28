@@ -37,7 +37,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, watch, computed } from "vue";
+import { defineComponent, ref, watch, computed, Ref, ComputedRef } from "vue";
 import { useQuery, useResult } from "@vue/apollo-composable";
 import { DRAW } from "@/graphql/lottery";
 import Datepicker from "vue3-datepicker";
@@ -52,15 +52,15 @@ export default defineComponent({
   setup() {
     // Set default value
     const date = ref(new Date("Jan 18 2018"));
-    const limit = ref(10);
-    const type = ref("cash4life");
+    const limit: Ref<number> = ref(10);
+    const type: Ref<string> = ref("cash4life");
 
     const removeDayFromDate = (array: Array<string>): Array<string> => {
       array.shift();
       return array;
     };
 
-    const dateFormatted = computed(() =>
+    const dateFormatted: ComputedRef<string> = computed(() =>
       removeDayFromDate(date.value.toDateString().split(" ")).join(" ")
     );
 
