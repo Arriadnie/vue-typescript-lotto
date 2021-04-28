@@ -1,0 +1,42 @@
+
+$layout-width: 1920
+$mobile-width: 375
+$tablet-width: 760
+
+@function get-vw($px)
+  $vw-context: ($layout-width*.01) * 1px
+  @return ($px/$vw-context) * 1vw
+
+@function get-t-vw($px)
+  $vw-context: ($tablet-width*.01) * 1px
+  @return ($px/$vw-context) * 1vw
+
+@function get-m-vw($px)
+  $vw-context: ($mobile-width*.01) * 1px
+  @return ($px/$vw-context) * 1vw
+
+@function get-vh($px)
+  $vw-context: (1080*.01) * 1px
+  @return ($px/$vw-context) * 1vh
+
+@function get-t-vh($px)
+  $vw-context: (1024*.01) * 1px
+  @return ($px/$vw-context) * 1vh
+
+@function get-m-vh($px)
+  $vw-context: (820*.01) * 1px
+  @return ($px/$vw-context) * 1vh
+
+@mixin mediaSize($media)
+  @if $media == desktop
+    @media (min-width: 1601px)
+      @content
+  @if $media == float
+    @media (min-width: 1201px) and (max-width: 1600px)
+      @content
+  @else
+    @media (max-width: $media+px)
+      @content
+
+@mixin letterSpace($spacing)
+  letter-spacing: ($spacing / 1000) * 1em

@@ -1,0 +1,108 @@
+body, html
+  text-size-adjust: none
+  line-height: 1
+  font-size-adjust: none
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  color: $main-color
+  font-size: get-vw(16px)
+  +mediaSize(1024)
+    font-size: get-t-vw(14px)
+  +mediaSize(750)
+    font-size: get-m-vw(14px)
+
+*
+  -webkit-text-size-adjust: none
+
+
+input, button
+  border-radius: 0
+  -webkit-appearance: none
+
+a[href]
+  outline: none
+  text-decoration: none
+  transition: 0.3s ease
+  color: $main-color
+
+a.nav-link[href],
+a:-webkit-any-link,
+a.news-slider-item[href]
+  text-decoration: none
+
+main
+  overflow: hidden
+
+.container-main
+  padding: get-vw(50px) get-vw(170px)
+  +mediaSize(1024)
+    padding: get-t-vw(40px)
+  +mediaSize(750)
+    padding: get-m-vw(20px)
+
+h1
+  font-size: get-vw(35px)
+  margin-bottom: get-vw(45px)
+  +mediaSize(1024)
+    font-size: get-t-vw(26px)
+  +mediaSize(750)
+    font-size: get-m-vw(24px)
+    margin-bottom: get-m-vw(20px)
+
+
+.hidden
+  display: none
+  visibility: hidden
+  pointer-events: none
+
+.icon
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-shrink: 0
+  img, svg
+    width: 100%
+    object-fit: contain
+    height: 100%
+
+.main-btn,
+a.main-btn
+  font-size: get-vw(20px)
+  border-radius: get-vw(30px)
+  padding: get-vw(15px) get-vw(30px)
+  background: $main-blue
+  color: #fff
+  display: flex
+  flex-shrink: 0
+  align-items: center
+  font-weight: 600
+  +mediaSize(1024)
+    font-size: get-t-vw(20px)
+    border-radius: get-t-vw(30px)
+    padding: get-t-vw(15px) get-t-vw(30px)
+  +mediaSize(750)
+    font-size: get-m-vw(16px)
+    border-radius: get-m-vw(30px)
+    padding: get-m-vw(12px) get-m-vw(25px)
+
+.title
+  font-size: get-vw(60px)
+  line-height: 1.1
+  color: $main-color
+  +mediaSize(1024)
+    font-size: get-t-vw(36px)
+  +mediaSize(750)
+    font-size: get-m-vw(28px)
+
+.subtitle
+  color: $main-color
+  opacity: 0.5
+  line-height: 1.2
+  font-size: get-vw(20px)
+  +mediaSize(1024)
+    font-size: get-t-vw(20px)
+  +mediaSize(750)
+    font-size: get-m-vw(14px)
+    
+.tablet
+  +mediaSize(750)
+    display: none

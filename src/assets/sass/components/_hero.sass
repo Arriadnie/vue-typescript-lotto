@@ -1,0 +1,60 @@
+@import "src/assets/sass/mixins"
+
+.home-hero
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+  .content
+    width: 40%
+    display: flex
+    align-items: flex-start
+    flex-direction: column
+
+    .title
+      margin-bottom: get-vw(50px)
+
+    .subtitle
+      margin-bottom: get-vw(50px)
+
+  .image
+    width: 55%
+    height: get-vw(650px)
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: contain
+
++mediaSize(1024)
+  .home-hero
+    flex-direction: column-reverse
+    &.container-main
+      padding-top: get-t-vw(10px)
+
+    .content
+      width: 100%
+
+      .title
+        margin-bottom: get-t-vw(50px)
+
+      .subtitle
+        margin-bottom: get-t-vw(50px)
+
+    .image
+      width: 100%
+      height: get-t-vw(550px)
+
+
++mediaSize(750)
+  .home-hero
+    .content
+      .title
+        margin-bottom: get-m-vw(25px)
+
+      .subtitle
+        margin-bottom: get-m-vw(25px)
+
+    .image
+      height: get-m-vw(330px)
+

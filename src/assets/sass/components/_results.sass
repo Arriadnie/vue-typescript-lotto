@@ -1,0 +1,193 @@
+@import "src/assets/sass/mixins"
+@import "src/assets/sass/vars"
+
+.result
+  font-size: get-vw(20px)
+
+  &-header
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &-form
+    margin-bottom: get-vw(20px)
+
+    .placeholder
+      opacity: 0.4
+
+    .v3dp__datepicker
+      margin-top: get-vw(10px)
+
+  &-wrap
+    .subtitle
+      margin-bottom: get-vw(20px)
+
+  &-list
+    display: flex
+    align-items: flex-start
+    justify-content: flex-start
+    flex-wrap: wrap
+
+  &-card
+    display: flex
+    flex-direction: column
+    padding: get-vw(30px)
+    width: 47%
+    border-radius: get-vw(20px)
+    box-shadow: 3px 3px 10px rgba(0,0,0,.2)
+
+    &-headline,
+    &-content
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+    &-headline
+      margin-bottom: get-vw(25px)
+      opacity: 0.5
+
+    .number
+      &-list
+        display: flex
+
+      &-item
+        width: get-vw(60px)
+        height: get-vw(60px)
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-shrink: 0
+        border-radius: 55%
+        position: relative
+        background-color: $main-blue
+        box-shadow: inset get-vw(10px) get-vw(6px) get-vw(16px) rgba(0,0,0,.3)
+        background-image: linear-gradient(-45deg, rgba(255,255,220,.3) 0%, transparent 100%)
+
+        &:after
+          content: ''
+          display: block
+          width: get-vw(30px)
+          height: get-vw(30px)
+          background: #fff
+          position: absolute
+          left: 50%
+          top: 50%
+          z-index: 1
+          border-radius: 50%
+          transform: translate(-50%, -50%)
+
+        span
+          color: $main-color
+          font-weight: bold
+          position: relative
+          z-index: 3
+
+        &.additional
+          background-color: $main-yellow
+
+        + .number-item
+          margin-left: get-vw(20px)
+
+    .jackpot
+      font-size: get-vw(40px)
+      font-weight: bold
+
+// Tablet
++mediaSize(1024)
+  .result
+    font-size: get-t-vw(18px)
+    &-header
+      flex-direction: column
+      align-items: flex-start
+
+    &-form
+      margin-top: get-t-vw(20px)
+      font-size: get-t-vw(18px)
+      margin-bottom: get-t-vw(25px)
+
+      .v3dp__datepicker
+        margin-top: get-t-vw(10px)
+
+    &-wrap
+      .subtitle
+        margin-bottom: get-t-vw(20px)
+
+    &-list
+      flex-direction: column
+
+    &-card
+      padding: get-t-vw(30px) get-t-vw(20px)
+      width: 100%
+      border-radius: get-t-vw(20px)
+
+      &-headline
+        margin-bottom: get-t-vw(25px)
+        font-size: get-t-vw(15px)
+
+      .number
+        &-item
+          width: get-t-vw(60px)
+          height: get-t-vw(60px)
+
+          &:after
+            width: get-t-vw(30px)
+            height: get-t-vw(30px)
+
+          span
+            font-size: get-t-vw(14px)
+
+          + .number-item
+            margin-left: get-t-vw(10px)
+
+      .jackpot
+        font-size: get-t-vw(36px)
+
+// Tablet
++mediaSize(750)
+  .result
+    font-size: get-m-vw(14px)
+
+    &-form
+      margin-top: get-m-vw(15px)
+      font-size: get-m-vw(16px)
+      margin-bottom: get-m-vw(20px)
+
+      .v3dp__datepicker
+        margin-top: get-m-vw(10px)
+
+    &-wrap
+      .subtitle
+        margin-bottom: get-m-vw(20px)
+
+    &-card
+      padding: get-m-vw(30px) get-m-vw(15px)
+      border-radius: get-m-vw(20px)
+
+      &-headline
+        margin-bottom: get-m-vw(20px)
+        font-size: get-m-vw(15px)
+
+      &-content
+        flex-direction: column
+        align-items: flex-end
+
+      .number
+        &-item
+          width: get-m-vw(40px)
+          height: get-m-vw(40px)
+
+          &:after
+            width: get-m-vw(24px)
+            height: get-m-vw(24px)
+
+          span
+            font-size: get-m-vw(14px)
+
+          + .number-item
+            margin-left: get-m-vw(10px)
+
+      .jackpot
+        font-size: get-m-vw(36px)
+
+        margin-top: get-m-vw(20px)

@@ -1,0 +1,66 @@
+@import "src/assets/sass/mixins"
+@import "src/assets/sass/vars"
+
+.nav
+  display: flex
+  align-items: center
+  justify-content: space-between
+  width: 100%
+
+  .logo
+    display: flex
+    align-items: center
+    font-size: get-vw(26px)
+    font-weight: 600
+    color: $main-color
+    .icon
+      width: get-vw(50px)
+      margin-left: get-vw(10px)
+      height: auto
+
+  &-list
+    display: flex
+    align-items: center
+
+    &-item
+      font-size: get-vw(22px)
+      cursor: pointer
+
+      &:hover
+        color: $main-blue
+
+      + .nav-list-item
+        margin-left: get-vw(30px)
+
+// Tablet
++mediaSize(1024)
+  .nav
+    padding-top: get-t-vw(10px)
+    padding-bottom: get-t-vw(10px)
+
+    .logo
+      font-size: get-t-vw(22px)
+      .icon
+        width: get-t-vw(50px)
+        margin-left: get-t-vw(10px)
+
+    &-list
+      &-item
+        font-size: get-t-vw(20px)
+        + .nav-list-item
+          margin-left: get-t-vw(30px)
+
+// Mobile
++mediaSize(750)
+  .nav
+    .logo
+      font-size: get-m-vw(16px)
+      .icon
+        width: get-m-vw(40px)
+        margin-left: get-m-vw(5px)
+
+    &-list
+      &-item
+        font-size: get-m-vw(14px)
+        + .nav-list-item
+          margin-left: get-m-vw(20px)
